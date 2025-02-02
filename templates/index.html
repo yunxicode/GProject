@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>多層次文本比對系統</title>
+  <link rel="icon" href="./static/favicon.svg">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+</head>
+
+<body
+  style="background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),url('./static/Background.png');background-repeat: no-repeat; background-attachment: fixed;">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/d35df67472.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <i class="fas fa-copy"></i>
+      &nbsp多層次文本比對系統
+      <!--空格: &nbsp-->
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">首頁<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  </br>
+  <div class="container">
+    <h2><i class="fas fa-file-upload"></i>&nbsp檔案上傳區</h2>
+    <form action="/file-upload" id="form1" class="dropzone">
+    </form>
+    </br>
+    <form action="/file-compared" method="POST">
+      <div align="center"><button id="compared" type="submit" class="btn btn-dark btn">開始文本比對</button></div>
+    </form>
+  </div>
+</body>
+
+<script>
+  Dropzone.options.form1 = {
+    paramName: "upload"
+  };
+
+  Dropzone.options.form1 = {
+    dictDefaultMessage: "把檔案拉到這裡就可以上傳"
+  };
+
+</script>
+
+</html>
